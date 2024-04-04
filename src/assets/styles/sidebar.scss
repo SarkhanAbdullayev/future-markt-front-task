@@ -1,0 +1,147 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: transform 350ms ease-in-out;
+
+    .error-message {
+        color: rgb(234, 101, 101);
+    }
+
+    ::-webkit-inner-spin-button {
+        display: none;
+    }
+
+    .sidebar {
+
+        width: fit-content;
+        padding: 41px;
+        width: 612px;
+        max-width: 100vw;
+        height: 100%;
+        background-color: $sidebarBg;
+        @include flex(start, unset, column);
+
+        .close-icon {
+            @include flex(end, center);
+            cursor: pointer;
+            margin-bottom: 38px;
+
+            svg {
+                width: 31px;
+                height: 30px;
+            }
+        }
+
+        .form-content {
+            width: 100%;
+            .headline {
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 74.4px;
+                color: $white;
+                margin-bottom: 35px;
+            }
+
+            .callback-form {
+                @include flex(space-between, start, column);
+                flex-grow: 1;
+                min-height: 350px;
+
+                .input {
+                    width: 100%;
+                    margin-bottom: 25px;
+                    padding: 11px 2px;
+                    font-size: 1.125rem;
+                    line-height: 1.75rem;
+                    color: $white;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+
+                .check-box {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: flex-end;
+                    align-items: center;
+                    gap: 10px;
+                    position: relative;
+
+                    #check {
+                        position: absolute;
+                        width: 100%;
+                        opacity: 0;
+                        z-index: 1;
+                        cursor: pointer;
+
+                        &:checked+.checked-wrapper {
+                            .checked-icon {
+                                display: block;
+                            }
+                        }
+
+                    }
+
+
+                    label {
+                        color: white;
+                        font-weight: 400;
+                        font-size: 0.8rem;
+                        line-height: 128.8%;
+                        letter-spacing: 3.5%;
+                    }
+
+                    .checked-wrapper {
+                        border: 1px solid white;
+                        width: 30px;
+                        height: 30px;
+                        @include flex(center, center);
+
+                        .checked-icon {
+                            display: none;
+                        }
+                    }
+                }
+
+                .inputWrapper {
+                    background-color: red;
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+
+        .submited-content {
+            width: 100%;
+            @include flex(center, center, column);
+            height: 100%;
+            .headline {
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 74.4px;
+                color: $white;
+                margin-bottom: 35px;
+            }
+
+            .submited-text {
+                padding: 0 10%;
+                font-size: 2.5rem;
+                line-height: 3.4rem;
+                text-align: center;
+                color: $white;
+
+            }
+        }
+    }
+}

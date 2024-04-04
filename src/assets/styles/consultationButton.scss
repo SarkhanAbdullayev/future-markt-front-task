@@ -1,0 +1,58 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.consultation-button {
+    display: flex;
+    border: 1px solid #fff;
+    max-width: fit-content;
+    @include flex(center, center);
+    cursor: pointer;
+    -webkit-cursor: pointer;
+
+    .button-text {
+        padding: 0 25px;
+    }
+
+    .button-img-wrapper {
+        width: 71px;
+        height: 71px;
+        @include flex(end, end);
+        padding: 13px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.signup-consultation {
+    grid-column: 1/2;
+    background-color: white;
+    border: 1px solid $main;
+
+    .button-text {
+        color: $main;
+    }
+
+    .button-img-wrapper {
+        border-left: 2px solid $main;
+        img {
+            filter: invert(100%) sepia(4%) saturate(0%) hue-rotate(289deg) brightness(107%) contrast(104%);
+        }
+    }
+}
+
+.free-consultation {
+    grid-column: 2/3;
+
+    .button-text {
+        color: white;
+    }
+
+    .button-img-wrapper {
+        border-left: 1px solid white;
+
+        
+    }
+}
