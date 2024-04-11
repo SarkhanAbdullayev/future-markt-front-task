@@ -1,0 +1,167 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+
+@media screen and (max-width:800px) {
+    .home {
+        overflow: hidden;
+
+        .container {
+            width: 85%;
+            .header {
+                display: grid;
+                grid-template-columns: subgrid;
+
+                .image-wrapper {
+                    grid-column: 1/2;
+                    width: 100%;
+                }
+
+                .navigation-menu {
+                    display: none;
+                }
+
+                .burger-menu {
+                    display: block;
+                    grid-column: 3/4;
+                    grid-row: 1/2;
+                    align-self: flex-start;
+                }
+
+                .call-wrapper {
+                    grid-column: 3/4;
+                    grid-row: 1/2;
+                    align-self: flex-end;
+                    width: fit-content;
+                    margin-left: auto;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            .main {
+                .headline {
+                    font-size: 25px;
+                    font-weight: 600;
+                    line-height: 33.82px;
+                    grid-column: 1/4;
+                    margin-top: 79px;
+                }
+
+                .description {
+                    grid-column: 1/3;
+                    gap: 6px;
+
+                    .desktop-text {
+                        display: none;
+                    }
+
+                    .mobile-text {
+                        display: block;
+                    }
+
+                }
+
+                .mentor-image {
+                    //width: unset;
+                    height: 70%;
+                    width: unset;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    img {
+                        width: unset;
+                        height: 100%;
+                        left: 130px;
+                    }
+                }
+
+                .consultation-buttons {
+                    grid-column: 1/3;
+                    display: grid;
+                    z-index: 1;
+                    .consultation-button {
+                        grid-column: 1/3;
+                        height: 30px;
+                        max-width: unset;
+                        display: grid;
+                        grid-template-columns: subgrid;
+                        border: none;
+                        background-color: unset;
+
+                        .desktop-text {
+                            display: none;
+                        }
+
+                        .mobile-text {
+                            font-size: 10px;
+                            font-weight: 600;
+                            line-height: 12.28px;
+                            @include flex(center, center);
+                            grid-column: 1/2;
+                            height: 100%;
+                        }
+
+                        .button-img-wrapper {
+                            width: 27px;
+                            height: 100%;
+                            grid-column: 2/3;
+                            padding: 5px;
+
+                            img {
+                                width: 8px;
+                                height: 8px;
+                            }
+                        }
+                    }
+
+                    .signup-consultation {
+
+                        margin-bottom: 15px;
+
+                        .mobile-text {
+                            background-color: white;
+                        }
+
+                        .button-img-wrapper {
+                            background-color: white;
+                            border-left: 1px solid $main;
+                        }
+                    }
+
+                    .free-consultation {
+                        .mobile-text {
+                            border-top: 1px solid white;
+                            border-left: 1px solid white;
+                            border-bottom: 1px solid white;
+                        }
+
+                        .button-img-wrapper {
+
+                            border: 1px solid white;
+                        }
+                    }
+                }
+
+                .statistics {
+                    height: 68px;
+                    .statistic-item {
+                        padding-left: 7.5px;
+                        gap: unset;
+                        z-index: 1;
+                        .desktop {
+                            display: none;
+                        }
+
+                        .mobile {
+                            display: block;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

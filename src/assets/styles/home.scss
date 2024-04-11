@@ -1,5 +1,6 @@
 @import './variables.scss';
 @import './mixins.scss';
+@import './media.scss';
 
 .home {
     width: 100%;
@@ -7,7 +8,7 @@
     background: linear-gradient($bgColor, $bgColor), url('./assets/images/bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    
+
 }
 
 .sidebarActive {
@@ -79,9 +80,11 @@
     grid-column: 1/4;
 
     .image-wrapper {
-        display: flex;
-        flex-direction: column;
+        width: 170px;
         cursor: pointer;
+        img {
+            width: 100%;
+        }
     }
 
     .navigation-menu {
@@ -124,7 +127,7 @@
     }
 
     .burger-menu {
-        width: 40;
+        width: 40px;
         height: 40px;
         display: none;
 
@@ -180,14 +183,13 @@
         max-width: 650px;
         margin-bottom: 64px;
         display: flex;
-        gap: 24px;
+        padding-left: 24px;
         align-items: center;
         grid-row: 2/3;
+        border-left: 1px solid #fff;
 
-        .horizontal-line {
-            width: 1px;
-            background-color: #fff;
-            height: 38px;
+        .mobile-text {
+            display: none;
         }
     }
 
@@ -216,9 +218,6 @@
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 100px;
         justify-content: flex-start;
-
-
-
     }
 
     .statistics {
@@ -229,12 +228,13 @@
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 100px;
         justify-content: flex-start;
+        align-items: start;
 
         .statistic-item {
             border-left: 1px solid #fff;
             padding-left: 23.5px;
             max-width: fit-content;
-            @include flex(center, center, column);
+            @include flex(center, flex-start, column);
             gap: 28px;
 
             .count {
@@ -246,11 +246,14 @@
 
             .item-description {
                 color: rgba(255, 255, 255, 0.5);
-                //font-family: Raleway;
                 font-size: 1rem;
                 font-weight: normal;
                 line-height: 122.8%;
                 letter-spacing: 0%;
+            }
+
+            .mobile {
+                display: none;
             }
         }
     }

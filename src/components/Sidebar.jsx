@@ -74,7 +74,8 @@ const Sidebar = ({ sidebarActive, setSidebarActive }) => {
                 >
                     <ConsultationButton
                         className='consultation-button free-consultation'
-                        text={'Заказать обратный звонок'}
+                        desktopText={'Заказать обратный звонок'}
+                        mobileText={'Заказать обратный звонок'}
                         buttonClickHandler={null}
                     />
                 </button>

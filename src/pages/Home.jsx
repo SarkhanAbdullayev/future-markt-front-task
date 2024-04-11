@@ -5,8 +5,8 @@ import { summer } from '../helpers/helper'
 import callIcon from '../assets/images/call-icon.svg'
 import menuIcon from '../assets/images/menu.svg'
 import mentor from '../assets/images/mentor.png'
-import arrowDown from '../assets/images/arrow-down.svg'
 import Sidebar from '../components/Sidebar'
+import logo from '../assets/images/logo.svg'
 
 import ConsultationButton from '../components/ConsultationButton'
 
@@ -57,9 +57,7 @@ const Home = () => {
                 <span className="grid-center-right-lines"></span>
                 <header className="header">
                     <div tabIndex={0} className="image-wrapper">
-                        <div className="horizontal-line"></div>
-                        <span>ALEX. SHEVTSOV</span>
-                        <div className="horizontal-line"></div>
+                        <img src={logo} alt="logo" />
                     </div>
                     <nav className="navigation-menu">
                         <ul className="nav-list">
@@ -77,7 +75,7 @@ const Home = () => {
                         <div className="call-icon">
                             <img src={callIcon} alt="call" />
                         </div>
-                        8-345-123-34-45
+                        <span>8-345-123-34-45</span>
                     </div>
                 </header>
                 <main className="main">
@@ -87,9 +85,11 @@ const Home = () => {
                         для вашего успеха
                     </h1>
                     <section className="description">
-                        <div className="horizontal-line"></div>
-                        <p>
+                        <p className='desktop-text'>
                             Когда ваше время и энергия лучше сфокусированы, стремление к новым возможностям становится реальностью, ваш успех зависит от ваших действий
+                        </p>
+                        <p className="mobile-text">
+                            Ваш успех зависит от ваших действий
                         </p>
                     </section>
                     <div className="mentor-image">
@@ -99,25 +99,27 @@ const Home = () => {
                     <section className="consultation-buttons">
                         <ConsultationButton
                             className="consultation-button signup-consultation"
-                            text={'Записаться на консультацию'}
+                            desktopText={'Записаться на консультацию'}
+                            mobileText={'Записаться'}
                             buttonClickHandler={sidebarOpenHandler}
                         />
                         <ConsultationButton
                             className="consultation-button free-consultation"
-                            text={'Бесплатная консультация'}
+                            desktopText={'Бесплатная консультация'}
+                            mobileText={'Заказать звонок'}
                             buttonClickHandler={sidebarOpenHandler}
                         />
                     </section>
                     <section className="statistics">
                         <div className="statistic-item">
-                            {/* <div className="vertical-line"></div> */}
                             <div className="count">{sumOfDate}</div>
-                            <div className="item-description">техник для достижения целей</div>
+                            <div className="item-description desktop">техник для <br/> достижения целей</div>
+                            <div className="item-description mobile">техники</div>
                         </div>
                         <div className="statistic-item">
-                            {/* <div className="vertical-line"></div> */}
                             <div className="count">{Math.round(charCode)}</div>
-                            <div className="item-description">увеличение личной продуктивности</div>
+                            <div className="item-description desktop">увеличение личной <br/> продуктивности</div>
+                            <div className="item-description mobile">продуктивности</div>
                         </div>
                     </section>
                 </main>

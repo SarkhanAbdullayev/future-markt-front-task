@@ -9,8 +9,14 @@
     cursor: pointer;
     -webkit-cursor: pointer;
 
-    .button-text {
+    
+
+    .desktop-text {
         padding: 0 25px;
+    }
+
+    .mobile-text {
+        display: none;
     }
 
     .button-img-wrapper {
